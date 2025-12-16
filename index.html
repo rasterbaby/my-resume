@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Weru | Capstone Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .cyber-grid {
+            background: 
+                linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+        
+        .holographic-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .holographic-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+            transition: 0.5s;
+        }
+        
+        .holographic-card:hover::before {
+            left: 100%;
+        }
+        
+        .neon-glow {
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+        }
+        
+        .typewriter {
+            overflow: hidden;
+            border-right: .15em solid #3b82f6;
+            white-space: nowrap;
+            margin: 0 auto;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #3b82f6; }
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translate(0, 0px); }
+            50% { transform: translate(0, 15px); }
+            100% { transform: translate(0, -0px); }
+        }
+        
+        .language-badge {
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        
+        .cyber-button {
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            border: none;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-weight: 600;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .cyber-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+        }
+        
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 15px;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white cyber-grid">
+    <!-- Header -->
+    <header class="fixed top-0 w-full z-50 bg-gray-900/95 backdrop-blur-lg border-b border-gray-800">
+        <nav>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center py-4">
+                    <div class="flex items-center">
+                        <a href="#" class="flex items-center space-x-3">
+                            <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                                <span class="text-white font-bold text-lg">AW</span>
+                            </div>
+                            <span class="text-xl font-bold gradient-text">Alex Weru</span>
+                        </a>
+                    </div>
+                    
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a href="#capstone" class="text-white font-medium hover:text-blue-400 transition-colors">Capstone</a>
+                        <a href="#resume" class="text-white font-medium hover:text-blue-400 transition-colors">Resume</a>
+                        <a href="#projects" class="text-white font-medium hover:text-blue-400 transition-colors">Projects</a>
+                        <a href="#culture" class="text-white font-medium hover:text-blue-400 transition-colors">Culture</a>
+                        <a href="#contact" class="text-white font-medium hover:text-blue-400 transition-colors">Contact</a>
+                    </div>
+                    
+                    <div class="flex items-center space-x-4">
+                        <a href="#contact" class="cyber-button">
+                            Get In Touch
+                        </a>
+                        <button class="md:hidden text-white">
+                            <i class='bx bx-menu text-2xl'></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Capstone Projects Section -->
+    <section id="capstone" class="min-h-screen pt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <h1 class="text-5xl md:text-6xl font-bold text-center mb-8">
+                <span class="gradient-text">Capstone Portfolio</span>
+            </h1>
+            <p class="text-gray-300 text-center text-xl max-w-3xl mx-auto mb-12">
+                Comprehensive showcase of my capstone projects meeting all IGS 4101 & 4202 requirements
+            </p>
+
+            <!-- Multi-Language Resume -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold mb-8 gradient-text">Multi-Language Resume</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="holographic-card p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="language-badge">English</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Professional Resume</h3>
+                        <p class="text-gray-300 mb-4">Comprehensive CV showcasing my technical skills and professional experience</p>
+                        <a href="/documents/resume-english.pdf" download class="cyber-button text-sm inline-block">
+                            Download PDF
+                        </a>
+                    </div>
+                    
+                    <div class="holographic-card p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="language-badge" style="background:linear-gradient(45deg, #10b981, #059669)">Kiswahili</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Wasifu wa Kitaalamu</h3>
+                        <p class="text-gray-300 mb-4">Wasifu wangu wa kitaalamu kwa lugha ya Kiswahili</p>
+                        <a href="/documents/resume-kiswahili.pdf" download class="cyber-button text-sm inline-block">
+                    Pakua PDF
+                        </a>
+                    </div>
+                    
+                    <div class="holographic-card p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="language-badge" style="background:linear-gradient(45deg, #f59e0b, #d97706)">Kikuyu</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">CV ya Kikuyu</h3>
+                        <p class="text-gray-300 mb-4">CV yakwa ya kitaalamu na lugha ya Gikuyu</p>
+                        <a href="/documents/resume-kikuyu.pdf" download class="cyber-button text-sm inline-block">
+                            Download PDF
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Autobiographical Essay -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold mb-8 gradient-text">Autobiographical Essay</h2>
+                <div class="holographic-card p-8">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-4">"From Code to Crops: My Journey"</h3>
+                            <p class="text-gray-300 mb-4">
+                                25-page comprehensive autobiography detailing my journey from technology to agriculture, 
+                                exploring the intersection of digital innovation and sustainable farming practices.
+                            </p>
+                            <div class="flex flex-wrap gap-4">
+                                <a href="/documents/autobiography.pdf" download class="cyber-button">
+                                    Download Essay (PDF)
+                                </a>
+                                <a href="/presentations/autobiography-presentation.pptx" download class="border border-blue-500 text-blue-400 px-6 py-3 rounded-lg font-medium hover:bg-blue-500/10 transition-colors">
+                                    Download Presentation
+                                </a>
+                            </div>
+                        </div>
+                        <div class="video-container">
+                            <!-- Replace with your actual YouTube video link -->
+                            <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
+                                    title="Autobiographical Essay Presentation" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Innovation in Field -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold mb-8 gradient-text">Innovation in IT Field</h2>
+                <div class="holographic-card p-8">
+                    <h3 class="text-2xl font-bold mb-4">"AI-Powered Agricultural Optimization System"</h3>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div>
+                            <p class="text-gray-300 mb-6">
+                                Revolutionary system combining machine learning with IoT sensors to optimize crop yields 
+                                and resource management for small-scale farmers in Kenya.
+                            </p>
+                            <div class="space-y-4 mb-6">
+                                <div class="flex items-center">
+                                    <i class='bx bx-check text-green-500 text-xl mr-3'></i>
+                                    <span>Real-time soil monitoring</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class='bx bx-check text-green-500 text-xl mr-3'></i>
+                                    <span>Predictive yield analysis</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class='bx bx-check text-green-500 text-xl mr-3'></i>
+                                    <span>Mobile app integration</span>
+                                </div>
+                            </div>
+                            <div class="flex flex-wrap gap-3 mb-4">
+                                <span class="language-badge">Multi-language Abstracts</span>
+                                <span class="language-badge" style="background:linear-gradient(45deg, #10b981, #059669)">Kiswahili</span>
+                                <span class="language-badge" style="background:linear-gradient(45deg, #f59e0b, #d97706)">Kikuyu</span>
+                                <span class="language-badge">English</span>
+                            </div>
+                        </div>
+                        <div class="video-container">
+                            <!-- Replace with your actual YouTube video link -->
+                            <iframe src="https://www.youtube.com/embed/YOUR_INNOVATION_VIDEO_ID" 
+                                    title="Agricultural Innovation Presentation" 
+                                    allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                    <div class="mt-6 flex flex-wrap gap-4">
+                        <a href="/documents/innovation-abstract-english.pdf" download class="cyber-button text-sm">
+                            English Abstract
+                        </a>
+                        <a href="/documents/innovation-abstract-kiswahili.pdf" download class="cyber-button text-sm">
+                            Kiswahili Abstract
+                        </a>
+                        <a href="/documents/innovation-abstract-kikuyu.pdf" download class="cyber-button text-sm">
+                            Kikuyu Abstract
+                        </a>
+                        <a href="/presentations/innovation-presentation.pptx" download class="border border-blue-500 text-blue-400 px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-500/10 transition-colors">
+                            Innovation PPT
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- African Culture -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold mb-8 gradient-text">African Culture & Gender Awareness</h2>
+                <div class="holographic-card p-8">
+                    <h3 class="text-2xl font-bold mb-4">"Digital Preservation of Kikuyu Cultural Heritage"</h3>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div>
+                            <p class="text-gray-300 mb-6">
+                                Exploring the intersection of traditional Kikuyu culture with modern technology, 
+                                focusing on gender roles and their evolution in contemporary African society.
+                            </p>
+                            <div class="space-y-3 mb-6">
+                                <div class="flex items-center">
+                                    <i class='bx bx-group text-purple-500 text-xl mr-3'></i>
+                                    <span>Gender dynamics in traditional societies</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class='bx bx-code-alt text-blue-500 text-xl mr-3'></i>
+                                    <span>Digital cultural preservation</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class='bx bx-trending-up text-green-500 text-xl mr-3'></i>
+                                    <span>Modern adaptations of traditions</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="video-container">
+                            <!-- Replace with your actual YouTube video link -->
+                            <iframe src="https://www.youtube.com/embed/YOUR_CULTURE_VIDEO_ID" 
+                                    title="African Culture Presentation" 
+                                    allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                    <div class="mt-6 flex flex-wrap gap-4">
+                        <a href="/presentations/culture-presentation.pptx" download class="cyber-button text-sm">
+                            Culture Presentation
+                        </a>
+                        <a href="/documents/culture-abstract-english.pdf" download class="border border-blue-500 text-blue-400 px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-500/10 transition-colors">
+                            English Abstract
+                        </a>
+                        <a href="/documents/culture-abstract-kiswahili.pdf" download class="border border-blue-500 text-blue-400 px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-500/10 transition-colors">
+                            Kiswahili Abstract
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modern Society Challenges -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold mb-8 gradient-text">Modern Society Solutions</h2>
+                <div class="holographic-card p-8">
+                    <h3 class="text-2xl font-bold mb-4">"Bridging the Digital Divide in Rural Kenya"</h3>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div>
+                            <p class="text-gray-300 mb-6">
+                                Comprehensive analysis of digital inequality in rural areas and proposed technological 
+                                solutions to enhance connectivity and digital literacy.
+                            </p>
+                            <div class="space-y-4 mb-6">
+                                <div class="bg-gray-800/50 p-4 rounded-lg">
+                                    <h4 class="font-bold text-blue-400 mb-2">Challenge</h4>
+                                    <p class="text-gray-300">Limited internet access in rural farming communities</p>
+                                </div>
+                                <div class="bg-gray-800/50 p-4 rounded-lg">
+                                    <h4 class="font-bold text-green-400 mb-2">Solution</h4>
+                                    <p class="text-gray-300">Low-cost mesh networks and mobile learning platforms</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="video-container">
+                            <!-- Replace with your actual YouTube video link -->
+                            <iframe src="https://www.youtube.com/embed/YOUR_SOCIETY_VIDEO_ID" 
+                                    title="Modern Society Solutions" 
+                                    allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Photographic Essay -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold mb-8 gradient-text">Photographic Essay</h2>
+                <div class="holographic-card p-8">
+                    <h3 class="text-2xl font-bold mb-6">"Technology Meets Tradition: The African Digital Renaissance"</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+                        <!-- Add your actual images here -->
+                        <div class="bg-gray-800 rounded-lg h-48 flex items-center justify-center">
+                            <i class='bx bx-image text-4xl text-gray-500'></i>
+                        </div>
+                        <div class="bg-gray-800 rounded-lg h-48 flex items-center justify-center">
+                            <i class='bx bx-image text-4xl text-gray-500'></i>
+                        </div>
+                        <div class="bg-gray-800 rounded-lg h-48 flex items-center justify-center">
+                            <i class='bx bx-image text-4xl text-gray-500'></i>
+                        </div>
+                    </div>
+                    <a href="/documents/photographic-essay.pdf" download class="cyber-button">
+                        Download Photographic Essay
+                    </a>
+                </div>
+            </div>
+
+            <!-- Online Presence -->
+            <div>
+                <h2 class="text-3xl font-bold mb-8 gradient-text">Professional Online Presence</h2>
+                <div class="holographic-card p-8">
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                        <a href="https://github.com/alexweru" class="flex flex-col items-center p-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition-colors">
+                            <i class='bx bxl-github text-4xl text-white mb-2'></i>
+                            <span class="text-sm font-medium">GitHub</span>
+                        </a>
+                        <a href="https://linkedin.com/in/alexweru" class="flex flex-col items-center p-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition-colors">
+                            <i class='bx bxl-linkedin text-4xl text-blue-400 mb-2'></i>
+                            <span class="text-sm font-medium">LinkedIn</span>
+                        </a>
+                        <a href="https://twitter.com/alexweru" class="flex flex-col items-center p-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition-colors">
+                            <i class='bx bxl-twitter text-4xl text-blue-400 mb-2'></i>
+                            <span class="text-sm font-medium">Twitter</span>
+                        </a>
+                        <a href="https://instagram.com/alexweru" class="flex flex-col items-center p-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition-colors">
+                            <i class='bx bxl-instagram text-4xl text-pink-500 mb-2'></i>
+                            <span class="text-sm font-medium">Instagram</span>
+                        </a>
+                        <a href="https://youtube.com/@alexweru" class="flex flex-col items-center p-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition-colors">
+                            <i class='bx bxl-youtube text-4xl text-red-500 mb-2'></i>
+                            <span class="text-sm font-medium">YouTube</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-800/50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold mb-8 gradient-text">Contact Information</h2>
+            <div class="holographic-card p-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="text-left">
+                        <h3 class="text-xl font-bold mb-4">Academic Supervisor</h3>
+                        <p class="text-gray-300 mb-2">Dedan Kimathi University of Technology</p>
+                        <p class="text-gray-300 mb-2">Institute of General Studies</p>
+                        <p class="text-gray-300">Email: <a href="mailto:igs@dkut.ac.ke" class="text-blue-400 hover:underline">igs@dkut.ac.ke</a></p>
+                    </div>
+                    <div class="text-left">
+                        <h3 class="text-xl font-bold mb-4">Student Information</h3>
+                        <p class="text-gray-300 mb-2">Alex Ngari Weru</p>
+                        <p class="text-gray-300 mb-2">BSc Information Technology</p>
+                        <p class="text-gray-300">Email: <a href="mailto:alexweru@email.com" class="text-blue-400 hover:underline">alexweru@email.com</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-400">© 2024 Alex Weru - Capstone Portfolio | Dedan Kimathi University of Technology</p>
+            <p class="text-gray-500 text-sm mt-2">IGS 4101 & 4202 - Critical Thinking and Communication Skills</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.classList.add('bg-gray-900/95');
+            } else {
+                header.classList.remove('bg-gray-900/95');
+            }
+        });
+
+        // YouTube video integration
+        const videoContainers = document.querySelectorAll('.video-container');
+        videoContainers.forEach(container => {
+            container.addEventListener('click', function() {
+                const iframe = this.querySelector('iframe');
+                if (iframe) {
+                    // Add autoplay when clicked
+                    const src = iframe.src;
+                    if (!src.includes('autoplay=1')) {
+                        iframe.src = src.includes('?') ? src + '&autoplay=1' : src + '?autoplay=1';
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

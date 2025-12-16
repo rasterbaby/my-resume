@@ -1,1 +1,2 @@
-# my-resume
+# Cap-Stone
+Simple comm skills project presentation
